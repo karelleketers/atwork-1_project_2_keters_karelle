@@ -82,22 +82,6 @@ a {
     font-family: "Raleway-Regular";
 }
 
-@media (min-width: 37.5rem) {
-    .cookies__wrapper {
-        justify-content: space-around;
-    }
-}
-
-.cookies__text--small {
-    width: 100%;
-}
-
-@media (min-width: 37.5rem) {
-    .cookies__text--small {
-        display: none;
-    }
-}
-
 .cookies__title {
     width: 100%;
 }
@@ -111,6 +95,22 @@ a {
 @media (min-width: 60rem) {
     .cookies__title {
         padding: 0 3.5rem;
+    }
+}
+
+@media (min-width: 37.5rem) {
+    .cookies__wrapper {
+        justify-content: space-around;
+    }
+}
+
+.cookies__text--small {
+    width: 100%;
+}
+
+@media (min-width: 37.5rem) {
+    .cookies__text--small {
+        display: none;
     }
 }
 
@@ -170,6 +170,15 @@ a {
     }
 }
 
+.cookies__link {
+    text-decoration: underline;
+    transition: all 0.2s ease;
+}
+
+.cookies__link:hover {
+    text-decoration: none;
+}
+
 .cookies__allow {
     color: white;
     padding: 0.5rem;
@@ -181,15 +190,6 @@ a {
 .cookies__allow:hover {
     background: white;
     color: black;
-}
-
-.cookies__link {
-    text-decoration: underline;
-    transition: all 0.2s ease;
-}
-
-.cookies__link:hover {
-    text-decoration: none;
 }
 
 @media (min-width: 60rem) {
@@ -210,6 +210,28 @@ a {
     .index__nav--top {
         height: 90vh;
     }
+}
+
+@media (min-width: 80rem) {
+    .index__nav--bottom {
+        display: none;
+    }
+}
+
+.hashtag {
+    margin-bottom: 0.5rem;
+}
+
+.hashtag__image {
+    width: 45%;
+    max-width: 7rem;
+}
+
+.index__nav--large__hashtag {
+    width: 7.5rem;
+    height: 3rem;
+    margin: 3rem 0;
+    transform: rotate(-90deg)
 }
 
 .carrousel {
@@ -284,9 +306,9 @@ a {
     width: 1.5rem;
 }
 
-.carrousel__nav__button:active {
+/* .carrousel__nav__button:active {
     border: none;
-}
+} */
 
 .carrousel__nav__left {
     display: inline-block;
@@ -303,8 +325,6 @@ a {
     width: 50%;
     height: 2rem; 
 }
-
-/* ------------TWITTER--------- */
 
 .bottom__twitter {
     position: relative;
@@ -332,13 +352,13 @@ a {
 
 .bottom__twitter__figure {
     width: 100%;
+    height: 100%;
     margin: 0;
 }
 
 @media(min-width: 48rem) {
     .bottom__twitter__figure{
         width: 50%;
-        height: 30vw;
         position: absolute;
         top: 0;
         left: 0;
@@ -485,9 +505,6 @@ a {
     font-family: "Raleway-Medium";
     font-weight: bold;
 }
-
-
-/* ------------TWITTER--------- */
 
 .bottom__multimedia {
     display: flex;
@@ -645,3 +662,15 @@ a {
     margin: 0;
 }
 
+.nav--side--bottom__wrapper {
+    display: none;
+}
+
+@media(min-width: 80rem) {
+    .nav--side--bottom__wrapper {
+        display: block;
+        position: absolute;
+        bottom: 2rem;
+        right: 2rem;
+    }
+}

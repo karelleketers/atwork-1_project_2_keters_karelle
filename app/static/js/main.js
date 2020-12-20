@@ -15,15 +15,17 @@
             this.$program = document.querySelector('.menu--hidden__programma');
             this.$dates = document.querySelector('.nav__menu__icon--right');
             this.$showDates = document.querySelector('.menu--hidden__dates');
-            this.$day = document.querySelectorAll('.nav__date__text');
-            this.$fullday = document.querySelectorAll('.nav__hidden__date');
+            this.$day = document.querySelector('.nav__dates__main');
+            this.$fullday = document.querySelector('.menu--hidden__dates__list');
             this.$banner = document.querySelector('.nav__banner');
+            this.$largeDay = document.querySelector('.nav--side__dates')
             
         },
         buildUI(){
             var that = this;
-            Array.from(this.$day).forEach((el, index) => {i = index%10; el.innerHTML = that.getDates(i, 1)})
-            Array.from(this.$fullday).forEach((el, index) => {i = index%10; el.innerHTML = that.getDates(i, 2)})
+            if (this.$day) {this.$day.innerHTML = this.getDates(1)};
+            if (this.$largeDay) {this.$largeDay.innerHTML = this.getDates(2)};
+            this.$fullday.innerHTML = this.getDates(3);
             this.$banner.style.backgroundImage = `url(${this.getBanner()})`;
         },
         registerListeners(){
@@ -37,89 +39,72 @@
                 if (that.$showDates.style.display == "block") {that.$showDates.style.display = "none"; that.$dates.style.transform = "rotate(360deg)"} else {that.$showDates.style.display = "block"; that.$dates.style.transform = "rotate(180deg)"}
             });
         },
-        getDates(index, sace) {
-            var d = new Date(days[index])
+        getDates(sace) {
+            let tempStr = ""
+            days.forEach(el => {d = new Date(el);          /* }) einde  */
             switch (d.getDay()) {
                 case 0:
-                    if (sace == 1) {day = 'Zo'}
-                    else {day = 'Zondag'};
+                    day = (sace == 1 || sace == 2) ? 'Zo' : 'Zondag';
                     break;
                 case 1:
-                    if (sace == 1) {day = 'Ma'}
-                    else {day = 'Maandag'};
+                    day = (sace == 1 || sace == 2) ? 'Ma' : 'Maandag';
                     break;
                 case 2:
-                    if (sace == 1) {day = 'Di'}
-                    else {day = 'Dinsdag'};
+                    day = (sace == 1 || sace == 2) ? 'Di' : 'Dinsdag';
                     break;
                 case 3:
-                    if (sace == 1) {day = 'Wo'}
-                    else {day = 'Woensdag'};
+                    day = (sace == 1 || sace == 2) ? 'Wo' : 'Woensdag';
                     break;
                 case 4:
-                    if (sace == 1) {day = 'Do'}
-                    else {day = 'Donderdag'};
+                    day = (sace == 1 || sace == 2) ? 'Do' : 'Donderdag';
                     break;
                 case 5:
-                    if (sace == 1) {day = 'Vr'}
-                    else {day = 'Vrijdag'};
+                    day = (sace == 1 || sace == 2) ? 'Vr' : 'Vrijdag';
                     break;
                 case 6:
-                    if (sace == 1) {day = 'Za'}
-                    else {day = 'Zaterdag'};
+                    day = (sace == 1 || sace == 2) ? 'Za' : 'Zaterdag';
                   };
             switch (d.getMonth()) {
                 case 0:
-                    if (sace == 1) {month = 'Jan'}
-                    else {month = 'Januari'};
+                    month = (sace == 1 || sace == 2) ? 'Jan' : 'Januari';
                     break;
                 case 1:
-                    if (sace == 1) {month = 'Feb'}
-                    else {month = 'Februari'};
+                    month = (sace == 1 || sace == 2) ? 'Feb' : 'Februari';
                     break;
                 case 2:
-                    if (sace == 1) {month = 'Mar'}
-                    else {month = 'Maart'};
+                    month = (sace == 1 || sace == 2) ? 'Mar' : 'March';
                     break;
                 case 3:
-                    if (sace == 1) {month = 'Apr'}
-                    else {month = 'April'};
+                    month = (sace == 1 || sace == 2) ? 'Apr' : 'April';
                     break;
                 case 4:
-                    if (sace == 1) {month = 'Mei'}
-                    else {month = 'Mei'};
+                    month = 'May';
                     break;
                 case 5:
-                    if (sace == 1) {month = 'Jun'}
-                    else {month = 'Juni'};
+                    month = (sace == 1 || sace == 2) ? 'Jun' : 'June'
                     break;
                 case 6:
-                    if (sace == 1) {month = 'Jul'}
-                    else {month = 'Juli'};
+                    month = (sace == 1 || sace == 2) ? 'Jul' : 'Juli'
                     break;
                 case 7:
-                    if (sace == 1) {month = 'Aug'}
-                    else {month = 'Augustus'};
+                    month = (sace == 1 || sace == 2) ? 'Aug' : 'Augustus'
                     break;
                 case 8:
-                    if (sace == 1) {month = 'Sep'}
-                    else {month = 'September'};
+                    month = (sace == 1 || sace == 2) ? 'Sep' : 'September'
                     break;
                 case 9:
-                    if (sace == 1) {month = 'Okt'}
-                    else {month = 'Oktober'};
+                    month = (sace == 1 || sace == 2) ? 'Oct' : 'October'
                     break;
                 case 10:
-                    if (sace == 1) {month = 'Nov'}
-                    else {month = 'November'};
+                    month = (sace == 1 || sace == 2) ? 'Nov' : 'November'
                     break;
                 case 11:
-                    if (sace == 1) {month = 'Dec'}
-                    else {month = 'December'};
+                    month = (sace == 1 || sace == 2) ? 'Dec' : 'December'
                     break;
                   }
-            if (sace == 1) {return `${day}<br/><span class="nav__date__span">${d.getDate()} ${month}</span>`}
-            else {return `${day} ${d.getDate()} ${month}`}
+            if (sace !== 3) {tempStr += `<a class=${sace == 2 ? "nav__date__link" : "date__link"} href="./programma.html?day=${d.getDate()}"><div id=${d.getDate()} class=${sace == 1 ? "nav__date" : "nav--side__date"}><p class="nav__date__text">${day}<br/><span class="nav__date__span">${d.getDate()} ${month}</span></p></div></a>`}
+            else {tempStr += `<li class="nav__menu__text menu--hidden__dates__listitem"><a class="nav__hidden__date" href="./programma.html?day=${d.getDate()}">${day} ${d.getDate()} ${month}</a></li>`}})
+            return tempStr;
             },
             getBanner() {
                 num = Math.floor(Math.random() * Math.floor(9))

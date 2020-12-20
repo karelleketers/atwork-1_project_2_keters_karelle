@@ -11,6 +11,8 @@ const days = [
     1564347600000,
 ];
 
+/* const dates = [19, 20, 21, 22, 23, 24, 25, 26, 27, 28]; */
+
 const banner = [
     "./media/banner--1.jpg", 
     "./media/banner--2.jpg", 
@@ -103,43 +105,3 @@ const tweets = [
         tweettime: "5 dagen 11 uur geleden",
     }
 ];
-
-
-const performances = [
-    {
-        photo:  "./media/circus--1.jpg",
-        date: "&nbsp;&nbsp;06.00 u",
-        title: "LIVE: To Mould a Better Future Together - Circ'ombelico (BE)",
-        subtitle: "Floraliënhal" 
-    }, {
-        photo:  "./media/circus--2.jpg",
-        date: "&nbsp;&nbsp;19.00 u",
-        title: "LIVE: Too fat to fly - Collectif Malunés (BE)",
-        subtitle: "'t Kuipke" 
-    }, {
-        photo:  "./media/circus--3.jpg",
-        date: "&nbsp;&nbsp;20.00 u",
-        title: "Planeet Sierk in Malem",
-        subtitle: "Circusplaneet" 
-    }, {
-        photo:  "./media/circus--7.jpg",
-        date: "&nbsp;&nbsp;20.30 u",
-        title: "Mardi Gras Weekend",
-        subtitle: "Bijloke" 
-    }, {
-        photo:  "./media/circus--5.jpg",
-        date: "&nbsp;&nbsp;Hele dag",
-        title: "DIGITAAL: Ongezien - Carré Curieux (BE)",
-        subtitle: "Dok Noord" 
-    }, {
-        photo:  "./media/circus--6.jpg",
-        date: "&nbsp;&nbsp;Hele dag",
-        title: "DIVERS: Samen (videowandeling) - Joren de Cooman",
-        subtitle: "Houtdok" 
-    }, {
-        photo:  "./media/circus--3.jpg",
-        date: "&nbsp;&nbsp;Hele dag",
-        title: "Online circusworkshop",
-        subtitle: "Circusplaneet" 
-    }
-]
