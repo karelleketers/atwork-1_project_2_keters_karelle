@@ -9,6 +9,7 @@ const EVENTS_URL = "https://www.pgm.gent/data/gentsefeesten/events_500.json";
         },
         cacheElements(){
             this.$selectedDay = document.querySelectorAll('.nav__date');
+            console.log(this.$selectedDay);
             this.$section = document.querySelector('.detail')
         },
         buildUI(){
